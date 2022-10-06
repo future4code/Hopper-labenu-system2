@@ -1,15 +1,18 @@
 import connection from "./connection";
+import dotenv from "dotenv"
 
 const createTable = async () => {
   try {
     await connection.raw(`
-      CREATE TABLE IF NOT EXISTS Turma(
+      DROP TABLE IF EXISTS Turma, Hobbies, Especialidades, Estudantes, Estudante_hobbies, Docente, Docente_especialidades;
+
+      CREATE TABLE Turma(
         id VARCHAR(255) PRIMARY KEY,
-        nome VARCHAR(255),
+        nome VARCHAR(255) NOT NULL,
         modulo VARCHAR(255) DEFAULT 0
       );
       
-      CREATE TABLE IF NOT EXISTS Estudantes(
+      CREATE TABLE Estudantes(
         id VARCHAR(255) PRIMARY KEY,
         nome VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL UNIQUE,
@@ -18,12 +21,12 @@ const createTable = async () => {
         FOREIGN KEY (turma_id) REFERENCES Turma(id)
       );
       
-      CREATE TABLE IF NOT EXISTS Hobbies(
+      CREATE TABLE Hobbies(
         id VARCHAR(255) PRIMARY KEY,
         nome VARCHAR(255) NOT NULL UNIQUE
       );
       
-      CREATE TABLE IF NOT EXISTS Estudante_hobbies(
+      CREATE TABLE Estudante_hobbies(
         id VARCHAR(255) PRIMARY KEY,
         estudante_id VARCHAR(255) NOT NULL,
         hobby_id VARCHAR(255) NOT NULL,
@@ -31,7 +34,7 @@ const createTable = async () => {
         FOREIGN KEY (hobby_id) REFERENCES Hobbies(id)
       );
       
-      CREATE TABLE IF NOT EXISTS Docente(
+      CREATE TABLE Docente(
         id VARCHAR(255) PRIMARY KEY,
         nome VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL UNIQUE,
@@ -40,12 +43,12 @@ const createTable = async () => {
         FOREIGN KEY (turma_id) REFERENCES Turma(id)
       );
       
-      CREATE TABLE IF NOT EXISTS Especialidades(
+      CREATE TABLE Especialidades(
         id VARCHAR(255) PRIMARY KEY,
         nome VARCHAR(255) NOT NULL UNIQUE
       );
       
-      CREATE TABLE IF NOT EXISTS Docente_especialidades(
+      CREATE TABLE Docente_especialidades(
         id VARCHAR(255) PRIMARY KEY,
         docente_id VARCHAR(255) NOT NULL,
         especialidades_id VARCHAR(255) NOT NULL,
@@ -66,13 +69,13 @@ const createTable = async () => {
 const insertData = async () => {
   try {
     await connection.raw(`
-    INSERT INTO Hobby (id,name)
+    INSERT INTO Hobbies (id,nome)
      VALUE(1, 'Coding'),
           (2, 'Read books'),
           (3, 'watch tv show'),
           (4, 'listen to music');
 
-    INSERT INTO Especialidades (id,name)
+    INSERT INTO Especialidades (id,nome)
     VALUE(1, 'Javascript'),
          (2, 'CSS'),
          (3, 'React'),
