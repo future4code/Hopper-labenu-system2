@@ -1,14 +1,15 @@
 import express from 'express'
 import cors from 'cors'
 import { AddressInfo } from "net";
-import { createClass } from '../endpoints/createClass';
-
+import { createTurma } from '../endpoints/createTurma';
+import { editTurma } from "../endpoints/editTurma"
 
 const app = express()
 app.use(express.json())
 app.use(cors())
 
-app.post("/", createClass)
+app.post("/turma", createTurma)
+app.put("/turma", editTurma)
 
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {

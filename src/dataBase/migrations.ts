@@ -70,7 +70,7 @@ const insertData = async () => {
   try {
     await connection.raw(`
     INSERT INTO Hobbies (id,nome)
-     VALUE(1, 'Coding'),
+    VALUE(1, 'Coding'),
           (2, 'Read books'),
           (3, 'watch tv show'),
           (4, 'listen to music');
