@@ -1,9 +1,15 @@
-### Criar turma;
+### Endpoint Criar Turma
+POST http://localhost:3003/turma
+Content-Type: application/json
 
+{
+  "nome": "Teste"
+}
 
+### Endpoint Editar Módulo da Turma
+PUT http://localhost:3003/turma?id=1665102068864
+Content-Type: application/json
 
-### Buscar turmas;
-
-
-
-### CONTINUAR ...
+{
+  "modulo": 1
+}
