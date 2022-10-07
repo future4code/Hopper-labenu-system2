@@ -80,12 +80,12 @@ const insertData = async () => {
     
     
     INSERT INTO Estudantes (id, nome, email, data_nasc, turma_id)
-    VALUE ('1', 'Gabriel Oliveira', 'gabrielo@gmail.com', 27/09/1999, '1'),
-          ('2', 'Gabriel Cândido', 'gabrielc@gmail.com', 04/05/1998, '1'),
-          ('3', 'Giovana Martinho', 'giovana@gmail.com', 24/07/1999, '1'),
-          ('4', 'Maurício Gonçalves', 'mauricio@gmail.com', 12/03/1989, '3'),
-          ('5', 'Wictor Cardoso', 'wictor@gmail.com', 17/07/1993, '2'),
-          ('6', 'Helaine Ribeiro', 'helaine@gmail.com', 22/10/1995, '4');
+    VALUE ('1', 'Gabriel Oliveira', 'gabrielo@gmail.com', '1999/09/27', '1'),
+          ('2', 'Gabriel Cândido', 'gabrielc@gmail.com', '1998/05/13', '1'),
+          ('3', 'Giovana Martinho', 'giovana@gmail.com', '1999/07/11', '1'),
+          ('4', 'Maurício Gonçalves', 'mauricio@gmail.com', '1989/03/15', '3'),
+          ('5', 'Wictor Cardoso', 'wictor@gmail.com', '1993/07/19', '2'),
+          ('6', 'Helaine Ribeiro', 'helaine@gmail.com', '1995/10/22', '4');
     
 
     INSERT INTO Hobbies (id,nome)
@@ -106,10 +106,10 @@ const insertData = async () => {
           ('8', '6', '2');
 
 
-    INSERT INTO Estudantes (id, nome, email, data_nasc, turma_id)
-    VALUE ('1', 'Luan Mello, 'luan@gmail.com', 27/05/1995, '1'),
-          ('2', 'Pedro Saldanha', 'peu@gmail.com', 14/05/1996, '1'),
-          ('3', 'Rodrigo', 'rodrigo@gmail.com', 24/01/1994, '2'),
+    INSERT INTO Docente (id, nome, email, data_nasc, turma_id)
+    VALUE ('1', 'Luan Mello', 'luan@gmail.com', '1995/05/22', '1'),
+          ('2', 'Pedro Saldanha', 'peu@gmail.com', '1996/05/19', '1'),
+          ('3', 'Rodrigo', 'rodrigo@gmail.com', '1994/01/04', '2');
 
 
     INSERT INTO Especialidades (id,nome)
@@ -120,7 +120,7 @@ const insertData = async () => {
          (5, 'Python');
 
     
-     INSERT INTO Estudante_hobbies (id, docente_id, especialidades_id)
+     INSERT INTO Docente_especialidades (id, docente_id, especialidades_id)
       VALUE('1', '1', '1'),
             ('2', '1', '3'),
             ('3', '2', '4'),
