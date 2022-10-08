@@ -13,3 +13,19 @@ Content-Type: application/json
 {
   "modulo": 1
 }
+
+
+
+### Endpoint Criar Estudante
+POST http://localhost:3003/estudante
+Content-Type: application/json
+
+{
+  "nome": "Gabriel Oliveira",
+  "email": "gabriel@gmail.com",
+  "data_nasc": "1999/09/27",
+  "turma_id": "1"
+}
+
+### Endpoint Requisitar todas as turmas ativas.
+GET http://localhost:3003/getTurmaActives
