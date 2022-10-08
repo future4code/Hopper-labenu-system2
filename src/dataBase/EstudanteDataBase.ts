@@ -24,7 +24,7 @@ export class EstudantesDataBase extends BaseDatabase {
       return result
     }
   
-    public async editTurmaEstudante(id: string, turma_id: string) {
+    public async editTurmaEstudante(id: string, turma_id: number) {
       const result = await BaseDatabase
       .connection(EstudantesDataBase.TABLE_ESTUDANTES)
       .update({turma_id})

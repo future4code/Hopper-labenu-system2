@@ -1,12 +1,15 @@
 import { Request, Response } from "express";
-import { EstudantesDataBase } from "../dataBase/EstudanteDataBase";
+import connection from "../dataBase/connection";
 
 export const pegarEstudantes = async (req:Request, res:Response) => {
     try{
-     const result =  await new EstudantesDataBase().getEstudante(req.params.nome)
-    //  if(!result){
-    //      res.status(404).send("Não conseguimos encontrar o estudante! Tente novamente!")
-    //  }
+      const nome = req.params.nome
+      
+      const result = await connection()
+      .select("*")
+      .from("Estudantes")
+      .whereLike(nome);
+
      res.status(200).send(result)
     }catch(error){
      res.statusCode = 500;

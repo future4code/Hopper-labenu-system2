@@ -29,3 +29,37 @@ Content-Type: application/json
 
 ### Endpoint Requisitar todas as turmas ativas.
 GET http://localhost:3003/getTurmaActives
+
+
+# ### Endpoint para pegar Estudante pelo nome.
+# GET  http://localhost:3003/getEstudanteByName/
+
+
+### Endpoint Editar Turma do Estudante
+PUT http://localhost:3003/editTurmaEstudante?id=4
+Content-Type: application/json
+
+{
+  "turma_id": 4
+}
+
+
+### Endpoint Criar Estudante
+POST http://localhost:3003/createDocente
+Content-Type: application/json
+
+{
+  "nome": "Carlos Miguel",
+  "email": "carlos123@gmail.com",
+  "data_nasc": "1995/04/29",
+  "turma_id": "3"
+}
+
+
+### Endpoint Editar Turma do Docente
+PUT http://localhost:3003/editTurmaDocente?id=2
+Content-Type: application/json
+
+{
+  "turma_id": 1
+}
