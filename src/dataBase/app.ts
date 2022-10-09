@@ -5,6 +5,10 @@ import { createTurma } from '../endpoints/createTurma';
 import { editTurma } from "../endpoints/editTurma"
 import { getTurma } from '../endpoints/GetTurmasActivates';
 import { createEstudante } from '../endpoints/createEstudante';
+import { pegarEstudantes } from '../endpoints/getEstudanteNome';
+import { editTurmaEstudante } from '../endpoints/EditTurmaEstudante';
+import { createDocente } from '../endpoints/createDocente';
+import { editTurmaDocente } from '../endpoints/EditTurmaDocente';
 
 const app = express()
 app.use(express.json())
@@ -14,6 +18,10 @@ app.post("/turma", createTurma)
 app.put("/turma", editTurma)
 app.post("/estudante", createEstudante)
 app.get("/getTurmaActives", getTurma )
+app.get("/getEstudanteByName", pegarEstudantes)
+app.put("/editTurmaEstudante", editTurmaEstudante)
+app.post("/createDocente", createDocente)
+app.put("/editTurmaDocente", editTurmaDocente)
 
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {
