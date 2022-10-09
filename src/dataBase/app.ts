@@ -3,12 +3,13 @@ import cors from 'cors'
 import { AddressInfo } from "net";
 import { createTurma } from '../endpoints/createTurma';
 import { editTurma } from "../endpoints/editTurma"
-import { getTurma } from '../endpoints/GetTurmasActivates';
+import { getTurma } from '../endpoints/getTurmasActivates';
 import { createEstudante } from '../endpoints/createEstudante';
 import { pegarEstudantes } from '../endpoints/getEstudanteNome';
-import { editTurmaEstudante } from '../endpoints/EditTurmaEstudante';
+import { editTurmaEstudante } from '../endpoints/editTurmaEstudante';
 import { createDocente } from '../endpoints/createDocente';
-import { editTurmaDocente } from '../endpoints/EditTurmaDocente';
+import { editTurmaDocente } from '../endpoints/editTurmaDocente';
+import { getDocente } from '../endpoints/getDocente';
 
 const app = express()
 app.use(express.json())
@@ -16,6 +17,8 @@ app.use(cors())
 
 app.post("/turma", createTurma)
 app.put("/turma", editTurma)
+app.get("/docente", getDocente)
+
 app.post("/estudante", createEstudante)
 app.get("/getTurmaActives", getTurma )
 app.get("/getEstudanteByName", pegarEstudantes)

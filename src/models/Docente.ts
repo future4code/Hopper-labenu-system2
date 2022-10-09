@@ -1,17 +1,27 @@
+export type TDocente = {
+  ID: string,
+  NOME: string,
+  EMAIL: string,
+  NASCIMENTO: string,
+  TURMA: string,
+  MODULO: number,
+  ESPECIALIDADE: string 
+}
+
 export class Docente {
-    constructor(
-      private id: string,
-      private nome: string,
-      private email: string,
-      private data_nasc: string,
-      private turma_id: string
-    ){
-      this.id = id
-      this.nome = nome
-      this.email = email
-      this.data_nasc = data_nasc
-      this.turma_id = turma_id
-    }
+  constructor(
+    private id: string,
+    private nome: string,
+    private email: string,
+    private data_nasc: string,
+    private turma_id: string
+  ){
+    this.id = id
+    this.nome = nome
+    this.email = email
+    this.data_nasc = data_nasc
+    this.turma_id = turma_id
+  }
 
     //GETTERS
   

@@ -117,7 +117,7 @@ const insertData = async () => {
          (2, 'CSS'),
          (3, 'React'),
          (4, 'Typescript'),
-         (5, 'Python');
+         (5, 'POO');
 
     
      INSERT INTO Docente_especialidades (id, docente_id, especialidades_id)
@@ -128,8 +128,6 @@ const insertData = async () => {
             ('5', '2', '3');
 
     `)
-  
-
 
   } catch (error: any) {
     console.log("error when entering data in the table")

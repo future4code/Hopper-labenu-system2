@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { DocentesDataBase } from "../dataBase/DocenteDataBase";
+import { DocenteDatabase } from "../dataBase/DocenteDataBase";
 
 
 
@@ -18,8 +18,8 @@ export const editTurmaDocente = async (req: Request, res: Response):Promise<void
       throw new Error("A 'turma_id' deve ser do tipo NUMBER!");
     }
 
-    const DocenteDataBase = new DocentesDataBase()
-    await DocenteDataBase.editTurmaDocente(id, turma_id)
+    const docentesDataBase = new DocenteDatabase()
+    await docentesDataBase.editTurmaDocente(id, turma_id)
 
     res.status(201).send({message: "O Docente foi alterado de turma com sucesso!"})
   } catch (error) {
