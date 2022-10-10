@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import connection from "../dataBase/connection";
 
-export const pegarEstudantes = async (req:Request, res:Response) => {
+export const getEstudante = async (req:Request, res:Response) => {
     try{
       const nome = req.params.nome
       
