@@ -33,8 +33,7 @@ export class DocenteDatabase extends BaseDatabase {
       const result = BaseDatabase.connection(DocenteDatabase.TABLE_DOCENTE_ESPECIALIDADES)
       .insert({
         id: especialidade.getID(),
-        docente_id: especialidade.getDocenteID(),
-        especialidades_id: especialidade.getEspecialidadesID()
+        nome: especialidade.getNome()
       })
 
       return result

@@ -1,4 +1,4 @@
-export class Estudantes {
+export class Estudante {
     constructor(
       private id: string,
       private nome: string,

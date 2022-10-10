@@ -14,7 +14,21 @@ Content-Type: application/json
   "modulo": 1
 }
 
+### Endpoint Editar Turma do Estudante
+PUT http://localhost:3003/editTurmaEstudante?id=3
+Content-Type: application/json
 
+{
+  "turma_id": 2
+}
+
+### Endpoint Editar Turma do Docente
+PUT http://localhost:3003/editTurmaDocente?id=1665298981623
+Content-Type: application/json
+
+{
+  "turma_id": 1
+}
 
 ### Endpoint Criar Estudante
 POST http://localhost:3003/estudante
@@ -23,8 +37,8 @@ Content-Type: application/json
 {
   "nome": " Simba",
   "email": "Simba@gmail.com",
-  "data_nasc": "1999/09/27",
-  "turma_id": "1"
+  "data_nasc": "27/09/1999",
+  "hobbies": "Jogar Futebol, Empinar Moto"
 }
 
 ### Endpoint Requisitar todas as turmas ativas.
@@ -34,35 +48,16 @@ GET http://localhost:3003/getTurmaActives
 # ### Endpoint para pegar Estudante pelo nome.
 # GET  http://localhost:3003/getEstudanteByName/
 
-
-### Endpoint Editar Turma do Estudante
-PUT http://localhost:3003/editTurmaEstudante?id=3
-Content-Type: application/json
-
-{
-  "turma_id": 2
-}
-
-
 ### Endpoint Criar Docente
 POST http://localhost:3003/createDocente
 Content-Type: application/json
 
 {
-  "nome": "Yummi",
-  "email": "Yummi@gmail.com",
-  "data_nasc": "1995/04/29",
-  "turma_id": "3",
-  "especialidade": "TESTE"
-}
-
-
-### Endpoint Editar Turma do Docente
-PUT http://localhost:3003/editTurmaDocente?id=1665298981623
-Content-Type: application/json
-
-{
-  "turma_id": 1
+  "nome": "",
+  "email": "",
+  "data_nasc": "",
+  "turma_id": "",
+  "especialidade": ""
 }
 
 ### Endpoint Para Buscar os Docentes

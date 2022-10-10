@@ -73,7 +73,8 @@ const insertData = async () => {
     await connection.raw(`
     
     INSERT INTO Turma (id, nome, modulo)
-    VALUE ('1', 'Turma Hopper', '4'),
+    VALUE ('0', 'Nenhuma', '0'),
+          ('1', 'Turma Hopper', '4'),
           ('2', 'Turma Hooks', '4'),
           ('3', 'Turma Lamar', '3'),
           ('4', 'Turma Gebru', '6');
